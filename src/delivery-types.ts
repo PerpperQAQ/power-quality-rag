@@ -1,0 +1,2 @@
+export type BusinessField={key:string;label:string;type:'text'|'textarea'|'number'|'select'|'boolean';required?:boolean;placeholder?:string;options?:string[];default?:string|number|boolean;minimum?:number;maximum?:number};
+export type Delivery={scene:string;inputFields:BusinessField[];outputFormat:string;memoryTurns:number;opening?:string;suggestions?:string[];agentMaxSteps?:number;guardrails:{blockedTopics?:string[];requireCitations?:boolean;refuseWithoutEvidence?:boolean;humanHandoff?:boolean;handoffKeywords?:string[];maxOutputChars?:number}};

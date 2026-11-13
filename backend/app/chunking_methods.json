@@ -1,0 +1,72 @@
+[
+  {
+    "value": "general",
+    "label": "通用递归 · General",
+    "description": "优先按段落、换行和中文句号切分，再按长度细分；重叠只在同一正文区域内生效。适合普通 Word、PDF 和说明文档。"
+  },
+  {
+    "value": "heading",
+    "label": "层级标题 · Manual / Markdown",
+    "description": "识别 Word 标题样式、Markdown # 标题及数字小节；按章节组织，长章节递归细分并带上标题路径。适合操作手册。"
+  },
+  {
+    "value": "qa",
+    "label": "问答对 · Q&A",
+    "description": "识别 Q:/A:、问:/答: 或以问号结尾的独立问题行。问题和其后答案成组，长答案细分时保留问题上下文，不跨问答对重叠。"
+  },
+  {
+    "value": "table",
+    "label": "表格行 · Table",
+    "description": "Excel、CSV、Word/PDF 原生表格和可识别 Markdown 表格逐行成块，保留列名和行位置；过长的行明确报错，不截断单元格。非表格正文单独递归切分。"
+  },
+  {
+    "value": "book",
+    "label": "书籍章节 · Book",
+    "description": "识别第几章/节/篇/卷及 Chapter、Part 等独立章节行；章内按长度细分，保留章节路径。不推测无法识别的目录或版面。"
+  },
+  {
+    "value": "paper",
+    "label": "论文章节 · Paper",
+    "description": "按摘要、引言、方法、结果、参考文献等常见标题及编号章节切分；章节内递归细分。依赖已提取的文字结构，不包含专用双栏版面模型。"
+  },
+  {
+    "value": "laws",
+    "label": "法规条款 · Laws",
+    "description": "识别第几条及 Article 编号，以条为边界，保留章/节上下文；超长条款细分并重复条号，不跨条款重叠。适合制度、规范和法规。"
+  },
+  {
+    "value": "page",
+    "label": "PDF 逐页 · Presentation",
+    "description": "按已解析 PDF 的真实页码分组，不跨页合并；超过长度上限的单页继续细分。演示文稿请先导出 PDF，当前不接收 PPTX。"
+  },
+  {
+    "value": "fixed",
+    "label": "固定长度 · 滑动窗口",
+    "description": "正文按字符长度和重叠长度连续滑动切分；原生表格保留完整行、列名和所属章节，不拆断单元格。适合格式不规则的纯文本。"
+  },
+  {
+    "value": "delimiter",
+    "label": "自定义分隔符",
+    "description": "把填写的字面分隔符作为硬边界，不跨边界合并或重叠；单段超长时仍按长度细分。支持用 \\n、\\t 表示换行或制表符，不执行正则。"
+  },
+  {
+    "value": "one",
+    "label": "整篇不切分 · One",
+    "description": "完整提取内容只生成一个分块，忽略重叠设置。仅适合短文档；超过配置的长度或向量输入预算会报错，不悄悄截断或改为多块。"
+  },
+  {
+    "value": "auto",
+    "label": "自动匹配文件",
+    "description": "表格按行、Markdown/Word 按标题，其他文件通用切分；可逐文件覆盖。"
+  },
+  {
+    "value": "parent_child",
+    "label": "父子分块",
+    "description": "大段落作为父块，小块用于检索；命中后返回父块上下文，保留真实来源位置。"
+  },
+  {
+    "value": "semantic",
+    "label": "语义相似度切分",
+    "description": "额外调用向量模型判断相邻文本边界，按长度合并相近片段；保留原文位置并记录实际用量。仅正式构建执行。"
+  }
+]

@@ -1,0 +1,11 @@
+const assert = require('node:assert/strict');
+const {knowledgeSuggestions}=require(process.argv[2]+'/chat-suggestions.js');
+const doc={id:'hero',kbId:'kb-hero',name:'英雄图鉴.docx',enabled:true,status:'ready',chunks:8,enabledChunks:8,detailsOmitted:true,metadata:{'可能的问题':'夜歌大招伤害是多少？；夜歌大招伤害是多少？；小鹿治疗量是多少？'}};
+let result=knowledgeSuggestions([doc],['kb-hero']);
+assert.deepEqual(result.map(x=>x.text),['夜歌大招伤害是多少？','小鹿治疗量是多少？']);
+assert(result.every(x=>x.title==='英雄图鉴'));
+assert.equal(knowledgeSuggestions([doc],['kb-other'])[0].title,'了解知识范围');
+assert.equal(knowledgeSuggestions([doc],['kb-hero'],['different-file'])[0].title,'了解知识范围');
+assert.equal(knowledgeSuggestions([{...doc,enabledChunks:0}],['kb-hero'])[0].title,'了解知识范围');
+assert.equal(knowledgeSuggestions([{...doc,metadata:{'可能的问题':''}}],['kb-hero'])[0].title,'了解知识范围');
+console.log('6 suggestion checks passed: real questions, deduplication, source titles, KB/file scope, disabled chunks, suppressed suggestions');

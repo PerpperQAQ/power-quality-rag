@@ -1,0 +1,46 @@
+# Local secrets and configuration
+.env
+.env.*
+!.env.example
+*.key
+*.pem
+*.p12
+*.pfx
+pq-operator.key
+credentials*.json
+secrets*.json
+
+# User data, evidence and exports
+data/
+backups/
+output/
+.runtime/
+*.db
+*.db-*
+*.sqlite*
+*.dump
+*.sql
+*.log
+*.zip
+*.tar
+*.tar.gz
+*.tgz
+apf/
+docs/power-quality/
+docs/evidence/
+.checks/
+.playwright-cli/
+
+# Dependencies and build artifacts
+node_modules/
+dist/
+.venv/
+venv/
+__pycache__/
+.pytest_cache/
+*.pyc
+*.egg-info/
+*.tsbuildinfo
+.DS_Store
+.idea/
+.vscode/

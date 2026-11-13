@@ -1,0 +1,32 @@
+const assert = require('node:assert/strict');
+const {seedState,retrieve,makeAnswer,isRetrievable} = require(process.argv[2]+'/demo.js');
+const {DEFAULT_RETRIEVAL,DEFAULT_PARSING,enrichState,makeChunks} = require(process.argv[2]+'/configuration.js');
+const checks=[];
+function check(name,fn){fn();checks.push(name);console.log('PASS '+name);}
+check('摘要中的可用分块数量决定可问答状态，不把未加载误作空库',()=>{
+ const doc={status:'ready',enabled:true,detailsOmitted:true,chunks:10,enabledChunks:9,segments:[]};
+ assert(isRetrievable(doc));assert(!isRetrievable({...doc,enabledChunks:0}));assert(!isRetrievable({...doc,enabled:false}));assert(!isRetrievable({...doc,status:'processing'}));assert(isRetrievable({...doc,status:'failed',previousReady:true}));
+});
+const seed=seedState();
+const names=Object.fromEntries(seed.knowledgeBases.map(k=>[k.id,k.name]));
+const search=(docs=seed.documents,config={},top=6,candidates=30,rerank=true)=>retrieve('差旅报销需要哪些附件？',docs,['kb-policy'],names,top,{...DEFAULT_RETRIEVAL,...config},candidates,rerank);
+check('存量数据补齐配置，分块数量与内容一致',()=>{assert(seed.catalog.length>=5);for(const d of seed.documents)assert.equal(d.chunks,d.segments.length);assert(seed.assistants.every(a=>a.generation.temperature===null));});
+check('迁移保留手工分块、停用状态及元数据',()=>{const s=structuredClone(seed);const d=s.documents.find(d=>d.status==='ready');d.segments=[{id:'manual',content:'修订内容',location:'第1条',enabled:false,keywords:['修订'],questions:[],manual:true}];d.metadata={部门:'财务'};const r=enrichState(s).documents.find(x=>x.id===d.id);assert.equal(r.chunks,1);assert.equal(r.segments[0].enabled,false);assert.equal(r.metadata.部门,'财务');});
+check('已启用且就绪的文档可以召回并显示评分',()=>{const r=search();assert(r.length>0);assert(r.every(c=>c.vectorScore>=0&&c.textScore>=0&&c.hybridScore>=0&&c.rerankScore>=0));});
+check('停用文档后不再召回',()=>{assert.equal(search(seed.documents.map(d=>({...d,enabled:false}))).length,0);});
+check('停用所有分块后不再召回',()=>{assert.equal(search(seed.documents.map(d=>({...d,segments:d.segments.map(c=>({...c,enabled:false}))}))).length,0);});
+check('构建失败且没有旧索引的文档不参与检索',()=>{assert.equal(search(seed.documents.map(d=>({...d,status:'failed',previousReady:false}))).length,0);});
+check('重新构建期间可以继续使用原索引',()=>{assert(search(seed.documents.map(d=>({...d,status:'processing',previousReady:d.status==='ready'}))).length>0);});
+check('高阈值会过滤低分结果',()=>{assert.equal(search(seed.documents,{threshold:1}).length,0);});
+check('向量和全文权重真实影响演示评分',()=>{const vector=search(seed.documents,{vectorWeight:1});const text=search(seed.documents,{vectorWeight:0});assert.notEqual(vector[0].hybridScore,text[0].hybridScore);assert.equal(vector[0].hybridScore,vector[0].vectorScore);});
+check('候选数量和返回上限均参与检索',()=>{assert(search(seed.documents,{},1).length<=1);assert(search(seed.documents,{},6,1).length<=1);});
+check('关闭重排后使用混合评分',()=>{const r=search(seed.documents,{},6,30,false);assert(r.every(c=>c.rerankScore===undefined&&c.score===c.hybridScore));});
+check('文档范围筛选只返回选中文档',()=>{const first=search()[0];const r=search(seed.documents,{fileIds:[first.docId]});assert(r.length>0);assert(r.every(c=>c.docId===first.docId));});
+check('元数据精确匹配，缺失字段不会通过',()=>{const docs=structuredClone(seed.documents);const first=search()[0];docs.find(d=>d.id===first.docId).metadata={部门:'财务'};const r=search(docs,{metadataKey:'部门',metadataValue:'财务'});assert(r.length>0);assert(r.every(c=>c.docId===first.docId));assert.equal(search(docs,{metadataKey:'部门',metadataValue:'研发'}).length,0);});
+check('手工编辑与关键词可以被检索，引用保留原位置',()=>{const docs=structuredClone(seed.documents);const d=docs.find(d=>d.status==='ready');d.segments=[{id:'edited',content:'验收专用内容：蓝鲸计划在周五提交。',enabled:true,location:'手工补充第2条',keywords:['蓝鲸'],questions:['什么时候提交蓝鲸计划？'],manual:true}];const r=retrieve('蓝鲸',docs,[d.kbId],names);assert.equal(r[0].id,'edited');assert.equal(r[0].location,'手工补充第2条');assert(makeAnswer('蓝鲸',r).includes('周五'));});
+check('重新分块遵守长度，内容不凭空增加',()=>{const d={id:'long',location:'第1页',content:'甲'.repeat(251)};const chunks=makeChunks(d,100,'\\n',10);assert(chunks.every(c=>c.content.length<=100));assert.equal(chunks.length,3);assert(chunks.every(c=>c.enabled&&!c.manual));});
+check('空内容不会生成空分块',()=>{assert.equal(makeChunks({id:'empty',location:'',content:''}).length,0);});
+check('历史配置快照不随草稿修改变化',()=>{const a=structuredClone(seed.assistants[0]);const snapshot=structuredClone(a);a.retrieval.threshold=0.9;a.generation.temperature=0;assert.equal(snapshot.retrieval.threshold,0.2);assert.equal(snapshot.generation.temperature,null);});
+check('新建知识库默认开启自动元数据，旧库迁移不会意外开启付费抽取',()=>{assert.equal(DEFAULT_PARSING.autoMetadata,true);const old=structuredClone(seed);for(const kb of old.knowledgeBases){delete kb.parsing.autoMetadata;delete kb.parsing.metadataModel;}const result=enrichState(old);assert(result.knowledgeBases.every(k=>k.parsing.autoMetadata===false));});
+check('元数据抽取开关与指定模型在迁移中保持用户选择',()=>{const s=structuredClone(seed);s.knowledgeBases[0].parsing={...DEFAULT_PARSING,autoMetadata:true,metadataModel:'custom-meta-model'};s.knowledgeBases[1].parsing={...DEFAULT_PARSING,autoMetadata:false};const result=enrichState(s);assert.equal(result.knowledgeBases[0].parsing.autoMetadata,true);assert.equal(result.knowledgeBases[0].parsing.metadataModel,'custom-meta-model');assert.equal(result.knowledgeBases[1].parsing.autoMetadata,false);});
+console.log(JSON.stringify({passed:checks.length,failed:0,checks},null,2));

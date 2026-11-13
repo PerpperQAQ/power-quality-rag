@@ -1,0 +1,1220 @@
+{
+  "version": "2026-10-26",
+  "sourceUrl": "https://cloud.ragflow.io/user-setting/model",
+  "referenceUrl": "https://github.com/infiniflow/ragflow/blob/main/conf/llm_factories.json",
+  "models": [
+    {
+      "model": "qwen3-max-2026-01-23",
+      "capabilities": [
+        "llm"
+      ],
+      "source": "RAGFlow 页面",
+      "snapshot": true,
+      "group": "快照版本"
+    },
+    {
+      "model": "kimi-k2.7-code",
+      "capabilities": [
+        "llm",
+        "vision"
+      ],
+      "source": "RAGFlow 页面",
+      "thinking": "always",
+      "streamOnly": true,
+      "group": "百炼第三方模型"
+    },
+    {
+      "model": "qwen-mt-flash",
+      "capabilities": [
+        "llm"
+      ],
+      "source": "RAGFlow 页面",
+      "disabledReason": "需要翻译专用参数，暂不用于知识库问答",
+      "group": "专用接口"
+    },
+    {
+      "model": "qwen3-vl-flash-2025-10-15",
+      "capabilities": [
+        "llm",
+        "vision"
+      ],
+      "source": "RAGFlow 页面",
+      "thinking": "hybrid",
+      "snapshot": true,
+      "group": "快照版本"
+    },
+    {
+      "model": "qwen3.5-35b-a3b",
+      "capabilities": [
+        "llm",
+        "vision"
+      ],
+      "source": "RAGFlow 页面",
+      "thinking": "hybrid",
+      "streamOnly": true,
+      "group": "千问模型"
+    },
+    {
+      "model": "qwen-mt-plus",
+      "capabilities": [
+        "llm"
+      ],
+      "source": "RAGFlow 页面",
+      "disabledReason": "需要翻译专用参数，暂不用于知识库问答",
+      "group": "专用接口"
+    },
+    {
+      "model": "qwen-mt-turbo",
+      "capabilities": [
+        "llm"
+      ],
+      "source": "RAGFlow 页面",
+      "disabledReason": "需要翻译专用参数，暂不用于知识库问答",
+      "group": "专用接口"
+    },
+    {
+      "model": "glm-5.2",
+      "capabilities": [
+        "llm"
+      ],
+      "source": "RAGFlow 页面",
+      "group": "百炼第三方模型",
+      "thinking": "hybrid"
+    },
+    {
+      "model": "qwen3.7-max-preview",
+      "capabilities": [
+        "llm"
+      ],
+      "source": "RAGFlow 页面",
+      "thinking": "always",
+      "streamOnly": true,
+      "group": "千问模型"
+    },
+    {
+      "model": "qwen3-vl-flash-2026-01-22",
+      "capabilities": [
+        "llm",
+        "vision"
+      ],
+      "source": "RAGFlow 页面",
+      "thinking": "hybrid",
+      "snapshot": true,
+      "group": "快照版本"
+    },
+    {
+      "model": "qwen3-coder-next",
+      "capabilities": [
+        "llm"
+      ],
+      "source": "RAGFlow 页面",
+      "group": "千问模型"
+    },
+    {
+      "model": "deepseek-v3.1",
+      "capabilities": [
+        "llm"
+      ],
+      "source": "RAGFlow 页面",
+      "group": "百炼第三方模型",
+      "thinking": "hybrid"
+    },
+    {
+      "model": "qwen3-omni-flash-2025-09-15",
+      "capabilities": [
+        "llm",
+        "vision"
+      ],
+      "source": "RAGFlow 页面",
+      "snapshot": true,
+      "group": "快照版本",
+      "streamOnly": true,
+      "textOnly": true,
+      "jsonMode": false,
+      "thinking": "hybrid"
+    },
+    {
+      "model": "qvq-max",
+      "capabilities": [
+        "llm",
+        "vision"
+      ],
+      "source": "RAGFlow 页面",
+      "thinking": "always",
+      "streamOnly": true,
+      "group": "千问模型"
+    },
+    {
+      "model": "deepseek-r1-distill-qwen-7b",
+      "capabilities": [
+        "llm"
+      ],
+      "source": "RAGFlow 页面",
+      "thinking": "always",
+      "streamOnly": true,
+      "group": "百炼第三方模型"
+    },
+    {
+      "model": "kimi-k2-thinking",
+      "capabilities": [
+        "llm"
+      ],
+      "source": "RAGFlow 页面",
+      "thinking": "always",
+      "streamOnly": true,
+      "group": "百炼第三方模型"
+    },
+    {
+      "model": "qwen-math-plus",
+      "capabilities": [
+        "llm"
+      ],
+      "source": "RAGFlow 页面",
+      "group": "千问模型"
+    },
+    {
+      "model": "qwen-plus-2025-12-01",
+      "capabilities": [
+        "llm"
+      ],
+      "source": "RAGFlow 页面",
+      "snapshot": true,
+      "group": "快照版本"
+    },
+    {
+      "model": "qwen3.6-flash-2026-04-16",
+      "capabilities": [
+        "llm",
+        "vision"
+      ],
+      "source": "RAGFlow 页面",
+      "thinking": "hybrid",
+      "snapshot": true,
+      "group": "快照版本"
+    },
+    {
+      "model": "qwen3-max-preview",
+      "capabilities": [
+        "llm"
+      ],
+      "source": "RAGFlow 页面",
+      "group": "千问模型"
+    },
+    {
+      "model": "deepseek-v4-flash",
+      "capabilities": [
+        "llm"
+      ],
+      "source": "RAGFlow 页面",
+      "group": "百炼第三方模型",
+      "thinking": "hybrid"
+    },
+    {
+      "model": "qwen-math-plus-latest",
+      "capabilities": [
+        "llm"
+      ],
+      "source": "RAGFlow 页面",
+      "group": "千问模型"
+    },
+    {
+      "model": "qvq-plus",
+      "capabilities": [
+        "llm"
+      ],
+      "source": "RAGFlow 页面",
+      "thinking": "always",
+      "streamOnly": true,
+      "group": "千问模型"
+    },
+    {
+      "model": "qwen3-vl-flash",
+      "capabilities": [
+        "llm",
+        "vision"
+      ],
+      "source": "RAGFlow 页面",
+      "recommendedFor": [
+        "vision"
+      ],
+      "thinking": "hybrid",
+      "group": "千问模型"
+    },
+    {
+      "model": "qwen3.7-max",
+      "capabilities": [
+        "llm"
+      ],
+      "source": "RAGFlow 页面",
+      "thinking": "hybrid",
+      "group": "千问模型"
+    },
+    {
+      "model": "qwen-math-turbo",
+      "capabilities": [
+        "llm"
+      ],
+      "source": "RAGFlow 页面",
+      "group": "千问模型"
+    },
+    {
+      "model": "ZHIPU/GLM-5.1",
+      "capabilities": [
+        "llm"
+      ],
+      "source": "RAGFlow 页面",
+      "group": "百炼第三方模型",
+      "thinking": "hybrid"
+    },
+    {
+      "model": "qwen-vl-ocr-2025-11-20",
+      "capabilities": [
+        "vision",
+        "ocr"
+      ],
+      "source": "RAGFlow 页面",
+      "snapshot": true,
+      "group": "快照版本"
+    },
+    {
+      "model": "qwen3.5-397b-a17b",
+      "capabilities": [
+        "llm",
+        "vision"
+      ],
+      "source": "RAGFlow 页面",
+      "thinking": "hybrid",
+      "streamOnly": true,
+      "group": "千问模型"
+    },
+    {
+      "model": "qwen3.6-plus-2026-04-02",
+      "capabilities": [
+        "llm",
+        "vision"
+      ],
+      "source": "RAGFlow 页面",
+      "thinking": "hybrid",
+      "snapshot": true,
+      "group": "快照版本"
+    },
+    {
+      "model": "qwen3.6-35b-a3b",
+      "capabilities": [
+        "llm",
+        "vision"
+      ],
+      "source": "RAGFlow 页面",
+      "thinking": "hybrid",
+      "streamOnly": true,
+      "group": "千问模型"
+    },
+    {
+      "model": "kimi/kimi-k2.5",
+      "capabilities": [
+        "llm",
+        "vision"
+      ],
+      "source": "RAGFlow 页面",
+      "group": "百炼第三方模型",
+      "thinking": "hybrid"
+    },
+    {
+      "model": "qwen3-coder-plus-2025-07-22",
+      "capabilities": [
+        "llm"
+      ],
+      "source": "RAGFlow 页面",
+      "snapshot": true,
+      "group": "快照版本"
+    },
+    {
+      "model": "qwen3-vl-plus-2025-12-19",
+      "capabilities": [
+        "llm",
+        "vision"
+      ],
+      "source": "RAGFlow 页面",
+      "thinking": "hybrid",
+      "snapshot": true,
+      "group": "快照版本"
+    },
+    {
+      "model": "qwen3-omni-flash-realtime-2025-09-15",
+      "capabilities": [
+        "llm",
+        "vision"
+      ],
+      "source": "RAGFlow 页面",
+      "disabledReason": "需要 Realtime 专用接口，当前文档链路暂不支持",
+      "snapshot": true,
+      "group": "专用接口"
+    },
+    {
+      "model": "qwen3-omni-flash",
+      "capabilities": [
+        "llm",
+        "vision"
+      ],
+      "source": "RAGFlow 页面",
+      "group": "千问模型",
+      "streamOnly": true,
+      "textOnly": true,
+      "jsonMode": false,
+      "thinking": "hybrid"
+    },
+    {
+      "model": "qwen-vl-ocr-latest",
+      "capabilities": [
+        "vision",
+        "ocr"
+      ],
+      "source": "RAGFlow 页面",
+      "group": "千问模型"
+    },
+    {
+      "model": "qwen3.5-omni-flash-2026-03-15",
+      "capabilities": [
+        "llm",
+        "vision"
+      ],
+      "source": "RAGFlow 页面",
+      "thinking": "hybrid",
+      "snapshot": true,
+      "group": "快照版本",
+      "streamOnly": true,
+      "textOnly": true,
+      "jsonMode": false
+    },
+    {
+      "model": "qwen3.7-plus-2026-05-26",
+      "capabilities": [
+        "llm",
+        "vision"
+      ],
+      "source": "RAGFlow 页面",
+      "thinking": "hybrid",
+      "snapshot": true,
+      "group": "快照版本"
+    },
+    {
+      "model": "qwen-plus-2025-09-11",
+      "capabilities": [
+        "llm"
+      ],
+      "source": "RAGFlow 页面",
+      "snapshot": true,
+      "group": "快照版本"
+    },
+    {
+      "model": "qwen3-coder-plus",
+      "capabilities": [
+        "llm"
+      ],
+      "source": "RAGFlow 页面",
+      "group": "千问模型"
+    },
+    {
+      "model": "qwen3.7-max-2026-05-20",
+      "capabilities": [
+        "llm"
+      ],
+      "source": "RAGFlow 页面",
+      "thinking": "hybrid",
+      "snapshot": true,
+      "group": "快照版本"
+    },
+    {
+      "model": "qwen3-max-2025-09-23",
+      "capabilities": [
+        "llm"
+      ],
+      "source": "RAGFlow 页面",
+      "snapshot": true,
+      "group": "快照版本"
+    },
+    {
+      "model": "qwen-mt-lite",
+      "capabilities": [
+        "llm"
+      ],
+      "source": "RAGFlow 页面",
+      "disabledReason": "需要翻译专用参数，暂不用于知识库问答",
+      "group": "专用接口"
+    },
+    {
+      "model": "qwen3-omni-flash-realtime",
+      "capabilities": [
+        "llm",
+        "vision"
+      ],
+      "source": "RAGFlow 页面",
+      "disabledReason": "需要 Realtime 专用接口，当前文档链路暂不支持",
+      "group": "专用接口"
+    },
+    {
+      "model": "kimi/kimi-k2.7-code",
+      "capabilities": [
+        "llm",
+        "vision"
+      ],
+      "source": "RAGFlow 页面",
+      "thinking": "always",
+      "streamOnly": true,
+      "group": "百炼第三方模型"
+    },
+    {
+      "model": "qwen-plus-2025-01-25",
+      "capabilities": [
+        "llm"
+      ],
+      "source": "RAGFlow 页面",
+      "snapshot": true,
+      "group": "快照版本"
+    },
+    {
+      "model": "qwen3.5-27b",
+      "capabilities": [
+        "llm",
+        "vision"
+      ],
+      "source": "RAGFlow 页面",
+      "thinking": "hybrid",
+      "streamOnly": true,
+      "group": "千问模型"
+    },
+    {
+      "model": "qwen-coder-turbo",
+      "capabilities": [
+        "llm"
+      ],
+      "source": "RAGFlow 页面",
+      "group": "千问模型"
+    },
+    {
+      "model": "qwen3-omni-flash-2025-12-01",
+      "capabilities": [
+        "llm",
+        "vision"
+      ],
+      "source": "RAGFlow 页面",
+      "snapshot": true,
+      "group": "快照版本",
+      "streamOnly": true,
+      "textOnly": true,
+      "jsonMode": false,
+      "thinking": "hybrid"
+    },
+    {
+      "model": "qwen3.6-max-preview",
+      "capabilities": [
+        "llm"
+      ],
+      "source": "RAGFlow 页面",
+      "thinking": "always",
+      "streamOnly": true,
+      "group": "千问模型"
+    },
+    {
+      "model": "qwen3-omni-flash-realtime-2025-12-01",
+      "capabilities": [
+        "llm",
+        "vision"
+      ],
+      "source": "RAGFlow 页面",
+      "disabledReason": "需要 Realtime 专用接口，当前文档链路暂不支持",
+      "snapshot": true,
+      "group": "专用接口"
+    },
+    {
+      "model": "kimi-k2.5",
+      "capabilities": [
+        "llm",
+        "vision"
+      ],
+      "source": "RAGFlow 页面",
+      "group": "百炼第三方模型",
+      "thinking": "hybrid"
+    },
+    {
+      "model": "qwen-coder-plus",
+      "capabilities": [
+        "llm"
+      ],
+      "source": "RAGFlow 页面",
+      "group": "千问模型"
+    },
+    {
+      "model": "qwen3-vl-plus-2025-09-23",
+      "capabilities": [
+        "llm",
+        "vision"
+      ],
+      "source": "RAGFlow 页面",
+      "thinking": "hybrid",
+      "snapshot": true,
+      "group": "快照版本"
+    },
+    {
+      "model": "qwen3.7-plus",
+      "capabilities": [
+        "llm",
+        "vision"
+      ],
+      "source": "RAGFlow 页面",
+      "recommendedFor": [
+        "llm"
+      ],
+      "thinking": "hybrid",
+      "group": "千问模型"
+    },
+    {
+      "model": "qwen-flash-character",
+      "capabilities": [
+        "llm"
+      ],
+      "source": "RAGFlow 页面",
+      "group": "千问模型"
+    },
+    {
+      "model": "qwen3.5-omni-plus",
+      "capabilities": [
+        "llm",
+        "vision"
+      ],
+      "source": "RAGFlow 页面",
+      "thinking": "hybrid",
+      "group": "千问模型",
+      "streamOnly": true,
+      "textOnly": true,
+      "jsonMode": false
+    },
+    {
+      "model": "qwen3-coder-flash",
+      "capabilities": [
+        "llm"
+      ],
+      "source": "RAGFlow 页面",
+      "group": "千问模型"
+    },
+    {
+      "model": "kimi/kimi-k2.6",
+      "capabilities": [
+        "llm",
+        "vision"
+      ],
+      "source": "RAGFlow 页面",
+      "group": "百炼第三方模型",
+      "thinking": "hybrid"
+    },
+    {
+      "model": "qwen-math-plus-0919",
+      "capabilities": [
+        "llm"
+      ],
+      "source": "RAGFlow 页面",
+      "snapshot": true,
+      "group": "快照版本"
+    },
+    {
+      "model": "qwen3.6-flash",
+      "capabilities": [
+        "llm",
+        "vision"
+      ],
+      "source": "RAGFlow 页面",
+      "recommendedFor": [
+        "vision"
+      ],
+      "thinking": "hybrid",
+      "group": "千问模型"
+    },
+    {
+      "model": "qwen3.6-plus",
+      "capabilities": [
+        "llm",
+        "vision",
+        "ocr"
+      ],
+      "source": "RAGFlow 页面",
+      "recommendedFor": [
+        "ocr"
+      ],
+      "thinking": "hybrid",
+      "group": "千问模型"
+    },
+    {
+      "model": "qwen3.5-omni-plus-2026-03-15",
+      "capabilities": [
+        "llm",
+        "vision"
+      ],
+      "source": "RAGFlow 页面",
+      "thinking": "hybrid",
+      "snapshot": true,
+      "group": "快照版本",
+      "streamOnly": true,
+      "textOnly": true,
+      "jsonMode": false
+    },
+    {
+      "model": "qwen-omni-turbo",
+      "capabilities": [
+        "llm",
+        "vision"
+      ],
+      "source": "RAGFlow 页面",
+      "group": "千问模型",
+      "streamOnly": true,
+      "textOnly": true,
+      "jsonMode": false
+    },
+    {
+      "model": "deepseek-v4-pro",
+      "capabilities": [
+        "llm"
+      ],
+      "source": "RAGFlow 页面",
+      "group": "百炼第三方模型",
+      "thinking": "hybrid"
+    },
+    {
+      "model": "qwen3.6-27b",
+      "capabilities": [
+        "llm",
+        "vision"
+      ],
+      "source": "RAGFlow 页面",
+      "thinking": "hybrid",
+      "streamOnly": true,
+      "group": "千问模型"
+    },
+    {
+      "model": "ZHIPU/GLM-5",
+      "capabilities": [
+        "llm"
+      ],
+      "source": "RAGFlow 页面",
+      "group": "百炼第三方模型",
+      "thinking": "hybrid"
+    },
+    {
+      "model": "qwen3-coder-plus-2025-09-23",
+      "capabilities": [
+        "llm"
+      ],
+      "source": "RAGFlow 页面",
+      "snapshot": true,
+      "group": "快照版本"
+    },
+    {
+      "model": "qwen3.7-max-2026-06-08",
+      "capabilities": [
+        "llm",
+        "vision"
+      ],
+      "source": "RAGFlow 页面",
+      "thinking": "hybrid",
+      "snapshot": true,
+      "group": "快照版本"
+    },
+    {
+      "model": "kimi-k2.6",
+      "capabilities": [
+        "llm",
+        "vision"
+      ],
+      "source": "RAGFlow 页面",
+      "group": "百炼第三方模型",
+      "thinking": "hybrid"
+    },
+    {
+      "model": "qwen3.5-omni-flash",
+      "capabilities": [
+        "llm",
+        "vision"
+      ],
+      "source": "RAGFlow 页面",
+      "thinking": "hybrid",
+      "group": "千问模型",
+      "streamOnly": true,
+      "textOnly": true,
+      "jsonMode": false
+    },
+    {
+      "model": "qwen-vl-ocr",
+      "capabilities": [
+        "vision",
+        "ocr"
+      ],
+      "source": "RAGFlow 页面",
+      "recommendedFor": [
+        "ocr"
+      ],
+      "group": "千问模型"
+    },
+    {
+      "model": "qwen3.5-122b-a10b",
+      "capabilities": [
+        "llm"
+      ],
+      "source": "RAGFlow 页面",
+      "thinking": "hybrid",
+      "streamOnly": true,
+      "group": "千问模型"
+    },
+    {
+      "model": "deepseek-v3.2",
+      "capabilities": [
+        "llm"
+      ],
+      "source": "RAGFlow 页面",
+      "group": "百炼第三方模型",
+      "thinking": "hybrid"
+    },
+    {
+      "model": "deepseek-r1",
+      "capabilities": [
+        "llm"
+      ],
+      "source": "RAGFlow 页面",
+      "thinking": "always",
+      "streamOnly": true,
+      "group": "百炼第三方模型"
+    },
+    {
+      "model": "deepseek-v3",
+      "capabilities": [
+        "llm"
+      ],
+      "source": "RAGFlow 页面",
+      "group": "百炼第三方模型"
+    },
+    {
+      "model": "deepseek-r1-distill-qwen-1.5b",
+      "capabilities": [
+        "llm"
+      ],
+      "source": "RAGFlow 页面",
+      "thinking": "always",
+      "streamOnly": true,
+      "group": "百炼第三方模型"
+    },
+    {
+      "model": "deepseek-r1-distill-qwen-14b",
+      "capabilities": [
+        "llm"
+      ],
+      "source": "RAGFlow 页面",
+      "thinking": "always",
+      "streamOnly": true,
+      "group": "百炼第三方模型"
+    },
+    {
+      "model": "deepseek-r1-distill-qwen-32b",
+      "capabilities": [
+        "llm"
+      ],
+      "source": "RAGFlow 页面",
+      "thinking": "always",
+      "streamOnly": true,
+      "group": "百炼第三方模型"
+    },
+    {
+      "model": "deepseek-r1-distill-llama-8b",
+      "capabilities": [
+        "llm"
+      ],
+      "source": "RAGFlow 页面",
+      "thinking": "always",
+      "streamOnly": true,
+      "group": "百炼第三方模型"
+    },
+    {
+      "model": "deepseek-r1-distill-llama-70b",
+      "capabilities": [
+        "llm"
+      ],
+      "source": "RAGFlow 页面",
+      "thinking": "always",
+      "streamOnly": true,
+      "group": "百炼第三方模型"
+    },
+    {
+      "model": "qwq-plus",
+      "capabilities": [
+        "llm"
+      ],
+      "source": "RAGFlow 页面",
+      "thinking": "always",
+      "streamOnly": true,
+      "group": "千问模型"
+    },
+    {
+      "model": "qwen-plus-2025-07-28",
+      "capabilities": [
+        "llm"
+      ],
+      "source": "RAGFlow 页面",
+      "snapshot": true,
+      "group": "快照版本"
+    },
+    {
+      "model": "qwen-plus-2025-07-14",
+      "capabilities": [
+        "llm"
+      ],
+      "source": "RAGFlow 页面",
+      "snapshot": true,
+      "group": "快照版本"
+    },
+    {
+      "model": "qwen-flash",
+      "capabilities": [
+        "llm"
+      ],
+      "source": "RAGFlow 页面",
+      "recommendedFor": [
+        "llm"
+      ],
+      "group": "千问模型"
+    },
+    {
+      "model": "qwen-flash-2025-07-28",
+      "capabilities": [
+        "llm"
+      ],
+      "source": "RAGFlow 页面",
+      "snapshot": true,
+      "group": "快照版本"
+    },
+    {
+      "model": "qwen3.5-plus",
+      "capabilities": [
+        "llm"
+      ],
+      "source": "RAGFlow 页面",
+      "thinking": "hybrid",
+      "group": "千问模型"
+    },
+    {
+      "model": "qwen3.5-plus-2026-02-15",
+      "capabilities": [
+        "llm"
+      ],
+      "source": "RAGFlow 页面",
+      "thinking": "hybrid",
+      "snapshot": true,
+      "group": "快照版本"
+    },
+    {
+      "model": "qwen3.5-flash",
+      "capabilities": [
+        "llm"
+      ],
+      "source": "RAGFlow 页面",
+      "thinking": "hybrid",
+      "group": "千问模型"
+    },
+    {
+      "model": "qwen3.5-flash-2026-02-23",
+      "capabilities": [
+        "llm"
+      ],
+      "source": "RAGFlow 页面",
+      "thinking": "hybrid",
+      "snapshot": true,
+      "group": "快照版本"
+    },
+    {
+      "model": "qwen3-max",
+      "capabilities": [
+        "llm"
+      ],
+      "source": "RAGFlow 页面",
+      "group": "千问模型"
+    },
+    {
+      "model": "qwen3-coder-480b-a35b-instruct",
+      "capabilities": [
+        "llm"
+      ],
+      "source": "RAGFlow 页面",
+      "group": "千问模型"
+    },
+    {
+      "model": "qwen3-30b-a3b-instruct-2507",
+      "capabilities": [
+        "llm"
+      ],
+      "source": "RAGFlow 页面",
+      "streamOnly": true,
+      "snapshot": true,
+      "group": "快照版本"
+    },
+    {
+      "model": "qwen3-30b-a3b-thinking-2507",
+      "capabilities": [
+        "llm"
+      ],
+      "source": "RAGFlow 页面",
+      "thinking": "always",
+      "streamOnly": true,
+      "snapshot": true,
+      "group": "快照版本"
+    },
+    {
+      "model": "qwen3-30b-a3b",
+      "capabilities": [
+        "llm"
+      ],
+      "source": "RAGFlow 页面",
+      "thinking": "hybrid",
+      "streamOnly": true,
+      "group": "千问模型"
+    },
+    {
+      "model": "qwen3-vl-plus",
+      "capabilities": [
+        "llm",
+        "vision"
+      ],
+      "source": "RAGFlow 页面",
+      "recommendedFor": [
+        "vision"
+      ],
+      "thinking": "hybrid",
+      "group": "千问模型"
+    },
+    {
+      "model": "qwen3-vl-235b-a22b-instruct",
+      "capabilities": [
+        "llm",
+        "vision"
+      ],
+      "source": "RAGFlow 页面",
+      "group": "千问模型",
+      "streamOnly": true
+    },
+    {
+      "model": "qwen3-vl-235b-a22b-thinking",
+      "capabilities": [
+        "llm",
+        "vision"
+      ],
+      "source": "RAGFlow 页面",
+      "thinking": "always",
+      "streamOnly": true,
+      "group": "千问模型"
+    },
+    {
+      "model": "qwen3-235b-a22b-instruct-2507",
+      "capabilities": [
+        "llm"
+      ],
+      "source": "RAGFlow 页面",
+      "streamOnly": true,
+      "snapshot": true,
+      "group": "快照版本"
+    },
+    {
+      "model": "qwen3-235b-a22b-thinking-2507",
+      "capabilities": [
+        "llm"
+      ],
+      "source": "RAGFlow 页面",
+      "thinking": "always",
+      "streamOnly": true,
+      "snapshot": true,
+      "group": "快照版本"
+    },
+    {
+      "model": "qwen3-235b-a22b",
+      "capabilities": [
+        "llm"
+      ],
+      "source": "RAGFlow 页面",
+      "thinking": "hybrid",
+      "streamOnly": true,
+      "group": "千问模型"
+    },
+    {
+      "model": "qwen3-next-80b-a3b-instruct",
+      "capabilities": [
+        "llm"
+      ],
+      "source": "RAGFlow 页面",
+      "group": "千问模型"
+    },
+    {
+      "model": "qwen3-next-80b-a3b-thinking",
+      "capabilities": [
+        "llm"
+      ],
+      "source": "RAGFlow 页面",
+      "thinking": "always",
+      "streamOnly": true,
+      "group": "千问模型"
+    },
+    {
+      "model": "qwen3-8b",
+      "capabilities": [
+        "llm"
+      ],
+      "source": "RAGFlow 页面",
+      "thinking": "hybrid",
+      "streamOnly": true,
+      "group": "千问模型"
+    },
+    {
+      "model": "qwen3-14b",
+      "capabilities": [
+        "llm"
+      ],
+      "source": "RAGFlow 页面",
+      "thinking": "hybrid",
+      "streamOnly": true,
+      "group": "千问模型"
+    },
+    {
+      "model": "qwen3-32b",
+      "capabilities": [
+        "llm"
+      ],
+      "source": "RAGFlow 页面",
+      "thinking": "hybrid",
+      "streamOnly": true,
+      "group": "千问模型"
+    },
+    {
+      "model": "qwen-long",
+      "capabilities": [
+        "llm"
+      ],
+      "source": "RAGFlow 页面",
+      "group": "千问模型"
+    },
+    {
+      "model": "qwen-turbo",
+      "capabilities": [
+        "llm"
+      ],
+      "source": "RAGFlow 页面",
+      "group": "千问模型"
+    },
+    {
+      "model": "qwen-max",
+      "capabilities": [
+        "llm"
+      ],
+      "source": "RAGFlow 页面",
+      "group": "千问模型"
+    },
+    {
+      "model": "qwen-plus",
+      "capabilities": [
+        "llm"
+      ],
+      "source": "RAGFlow 页面",
+      "recommendedFor": [
+        "llm"
+      ],
+      "group": "千问模型"
+    },
+    {
+      "model": "qwen-plus-2025-04-28",
+      "capabilities": [
+        "llm"
+      ],
+      "source": "RAGFlow 页面",
+      "snapshot": true,
+      "group": "快照版本"
+    },
+    {
+      "model": "qwen-plus-latest",
+      "capabilities": [
+        "llm"
+      ],
+      "source": "RAGFlow 页面",
+      "group": "千问模型"
+    },
+    {
+      "model": "text-embedding-v2",
+      "capabilities": [
+        "embedding"
+      ],
+      "source": "RAGFlow 页面",
+      "group": "千问模型"
+    },
+    {
+      "model": "text-embedding-v3",
+      "capabilities": [
+        "embedding"
+      ],
+      "source": "RAGFlow 页面",
+      "group": "千问模型"
+    },
+    {
+      "model": "text-embedding-v4",
+      "capabilities": [
+        "embedding"
+      ],
+      "source": "RAGFlow 页面",
+      "recommendedFor": [
+        "embedding"
+      ],
+      "group": "千问模型"
+    },
+    {
+      "model": "qwen-vl-max",
+      "capabilities": [
+        "llm",
+        "vision"
+      ],
+      "source": "RAGFlow 页面",
+      "legacy": true,
+      "group": "历史视觉模型",
+      "outputLimit": 1500,
+      "jsonMode": false
+    },
+    {
+      "model": "qwen-vl-plus",
+      "capabilities": [
+        "llm",
+        "vision"
+      ],
+      "source": "RAGFlow 页面",
+      "legacy": true,
+      "group": "历史视觉模型",
+      "outputLimit": 1500,
+      "jsonMode": false
+    },
+    {
+      "model": "gte-rerank",
+      "capabilities": [
+        "rerank"
+      ],
+      "source": "RAGFlow 页面",
+      "group": "千问模型"
+    },
+    {
+      "model": "gte-rerank-v2",
+      "capabilities": [
+        "rerank"
+      ],
+      "source": "RAGFlow 页面",
+      "group": "千问模型"
+    },
+    {
+      "model": "qwen3-rerank",
+      "capabilities": [
+        "rerank"
+      ],
+      "source": "RAGFlow 页面",
+      "recommendedFor": [
+        "rerank"
+      ],
+      "group": "千问模型"
+    }
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "name": "enterprise-knowledge-hub",
+  "private": true,
+  "version": "0.8.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host 127.0.0.1 --port 5173",
+    "build": "tsc -b && vite build",
+    "preview": "vite preview --host 127.0.0.1 --port 4173",
+    "check": "tsc -b",
+    "test:domain": "tsc --target es2023 --module commonjs --moduleResolution node --resolveJsonModule --esModuleInterop --skipLibCheck --rootDir . --outDir /tmp/langchina-domain-check src/demo.ts src/configuration.ts src/types.ts && node scripts/qa-domain.cjs /tmp/langchina-domain-check/src",
+    "test:sync": "tsc --target es2023 --module commonjs --moduleResolution node --skipLibCheck --outDir /tmp/langchina-live-check src/live-api.ts src/types.ts && node scripts/qa-live-sync.cjs /tmp/langchina-live-check",
+    "test:suggestions": "tsc --target es2023 --module commonjs --moduleResolution node --resolveJsonModule --esModuleInterop --skipLibCheck --rootDir . --outDir /tmp/langchina-suggestions-check src/chat-suggestions.ts && node scripts/qa-chat-suggestions.cjs /tmp/langchina-suggestions-check/src",
+    "test:answers": "tsc --target es2023 --module esnext --moduleResolution bundler --jsx react-jsx --skipLibCheck --outDir output/full-qa/markdown-check src/AnswerMarkdown.tsx && node scripts/qa-answer-markdown.mjs",
+    "test:observability": "tsc --target es2023 --module commonjs --moduleResolution node --skipLibCheck --outDir /tmp/langchina-observability-check src/observability.ts src/types.ts && node scripts/qa-observability.cjs /tmp/langchina-observability-check/observability.js"
+  },
+  "dependencies": {
+    "@ant-design/icons": "^6.3.4",
+    "antd": "^6.6.8",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0",
+    "react-markdown": "^10.1.0",
+    "react-router-dom": "^7.9.0",
+    "remark-gfm": "^4.0.1"
+  },
+  "devDependencies": {
+    "@types/node": "^24.0.0",
+    "@types/react": "^19.2.0",
+    "@types/react-dom": "^19.2.0",
+    "@vitejs/plugin-react": "^6.0.0",
+    "typescript": "~5.9.3",
+    "vite": "^8.3.5"
+  }
+}

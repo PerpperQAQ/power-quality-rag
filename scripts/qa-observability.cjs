@@ -1,0 +1,13 @@
+const assert = require('node:assert/strict');
+const {aggregateUsage,estimateCost} = require(process.argv[2]);
+const logs=[{id:'a',createdAt:'2026-10-01T00:00:00Z',tokens:null,usage:[{kind:'llm',model:'m',inputTokens:100,outputTokens:20,tokens:120},{kind:'embedding',model:'e',inputTokens:30,outputTokens:null,tokens:30},{kind:'llm',model:'m',inputTokens:null,outputTokens:null,tokens:null}]},{id:'b',createdAt:'2026-10-02T00:00:00Z',tokens:7}];
+const stats=aggregateUsage(logs);assert.equal(stats.known,157);assert.equal(stats.knownCount,3);assert.equal(stats.unknownCount,1);assert.equal(stats.groups.find(x=>x.kind==='llm').runs,1);
+const prices=[{model:'m',kind:'llm',inputRate:'1',outputRate:'2',effectiveAt:'2026-09-30T00:00:00Z'},{model:'m',kind:'llm',inputRate:'99',outputRate:'99',effectiveAt:'2026-10-03T00:00:00Z'},{model:'e',kind:'embedding',inputRate:'0.5',outputRate:'0',effectiveAt:'2026-09-30T00:00:00Z'}];
+const cost=estimateCost(logs,prices);assert.equal(cost.knownCount,2);assert.equal(cost.unknownCount,2);assert.ok(Math.abs(cost.total-0.000155)<1e-12);
+assert.deepEqual(estimateCost([{id:'c',createdAt:'2020-01-01T00:00:00Z',tokens:null,usage:[{kind:'llm',model:'m',inputTokens:1,outputTokens:1}]}],prices),{total:0,knownCount:0,unknownCount:1});
+console.log('Observability aggregation checks passed');
+const cachedLog={id:'cached',createdAt:'2026-10-01T00:00:00Z',usage:[{kind:'llm',model:'m',inputTokens:1000,outputTokens:100,cachedTokens:400}]};
+const cachedPrices=[{model:'m',kind:'llm',inputRate:'2',outputRate:'4',cachedInputRate:'0.5',effectiveAt:'2026-09-30T00:00:00Z'}];
+assert.ok(Math.abs(estimateCost([cachedLog],cachedPrices).total-0.0018)<1e-12);
+assert.equal(estimateCost([{...cachedLog,usage:[{...cachedLog.usage[0],cachedTokens:null}]}],cachedPrices).unknownCount,1);
+assert.equal(estimateCost([cachedLog],prices).unknownCount,1);
